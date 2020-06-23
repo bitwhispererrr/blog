@@ -1,4 +1,5 @@
 import React from 'react'
+import 'remixicon/fonts/remixicon.css'
 
 const NavItem = ({ name, icon }) => {
     const switchPage = function (pageID) {
@@ -16,7 +17,7 @@ const NavItem = ({ name, icon }) => {
     }
     return (
         <div class="nav-item" data-target={name} onClick={() => switchPage(name)}>
-            {icon}
+            <i className={`ri-${icon}-line`} style={{ fontSize: "25px" }}></i>
             <span>{name}</span>
         </div>
     )

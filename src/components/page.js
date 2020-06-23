@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from "prop-types"
 
-const Page = ({ children, id, active, position, bgColor }) => {
+const Page = ({ children, id, active, bgColor }) => {
     return (
-        <section className={`page offscreen ${active ? 'active ' : ''} ${position} bg-${bgColor}`} id={id}>
+        <section className={`page offscreen ${active ? 'active ' : ''} bg-${bgColor}`} id={id}>
             {children}
         </section>
     )
