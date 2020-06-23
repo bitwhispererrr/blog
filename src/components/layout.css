@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 *{
     padding: 0;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    /* font-family: 'Roboto Mono', monospace; */
+    font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
 }
 
@@ -26,7 +30,6 @@ nav div{
     display: flex;
     position: relative;
     align-items: center;
-    font-weight: bold;
 
     width: 30px;
     overflow: hidden;
@@ -38,20 +41,21 @@ nav span{
     padding-left: 5px;
     display: inline-block;
     overflow: hidden;
+    font-weight: bold;
     transition: all ease-in .2s;
-    font-family: 'Roboto Mono', monospace;
+    /* font-family: 'Roboto Mono', monospace; */
 }
 
 nav:hover div
 {
-    width: 65px;
+    width: auto;
     overflow: hidden;
     transition: all ease-in .2s;
 }
 
 nav:hover span
 {
-    width: 50px;
+    width: 55px;
     overflow: hidden;
     transition: all ease-in .2s;
 }
@@ -61,41 +65,26 @@ nav div:hover{
     cursor: pointer;
 }
 
-.feather {
-  width: 15px;
-  height: 15px;
-  display: inline-block;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  fill: none;
-}
-
 /* page */
 .page{
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
+    z-index: -1;
     height: 100vh;
+    display: flex;
     text-align: center;
     vertical-align: middle;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-content: center;
     align-items: center;
-    z-index: -1;
-    transform: scale(0.4);
-    transition: transform ease-in 0.6s;
 }
 
 .page.active{
     display: flex;
     z-index: 1;
-    transform: scale(1);
-    transition: transform ease-in 0.6s;
+    transition: opacity ease-in 0.6s;
 }
 
 
@@ -103,41 +92,36 @@ nav div:hover{
 
 .offscreen{
     opacity: 0.1;
-    transition: all opacity ease-in 0.6s;
-}
-
-
-.offscreen.top{
-    transform: translateY(-100%) scale(0.2);
-    transition: all  ease-in 0.6s;
-}
-
-.offscreen.right{
-    transform: translateX(100%) scale(0.2);
-    transition: all ease-in 0.6s;
-}
-
-.offscreen.bottom{
-    transform: translateY(100%) scale(0.2);
-    transition: all ease-in 0.6s;
-}
-
-.offscreen.left{
-    transform: translateX(-100%) scale(0.2);
-    transition: all ease-in 0.6s;
+    transition: opacity ease-in 0.6s;
 }
 
 .offscreen.active{
     opacity: 1;
-    transform: unset;
-    transition: all ease-in 0.6s;
+    transition: opacity ease-in 0.6s;
 }
 /* hero section bg */
 
+.social{
+    margin: 10px auto
+}
+
+.social a{
+    text-decoration: none;
+}
+
+.social i{
+    font-size: 25px;
+    margin: 0 5px;
+    transition: color ease-in 0.55s;
+}
+
+.social i:hover{
+   cursor: pointer;
+   transition: color ease-in 0.3s;
+}
+#summary,
 .bg-pattern{
-    position: absolute;
-    left: 10%;
-    top: 10%;
+    width: 40%
 }
 
 .bg-pattern svg{
@@ -150,7 +134,25 @@ nav div:hover{
     stroke-dashoffset: 1px;
 }
 /* blog card styles */
-.card-bg:hover{
+.card .card-bg{
+    transition: transform .4s;
+}
+
+.card:hover .card-bg,
+.card-header:hover{
+    cursor: pointer;
+}
+
+.card:hover .card-bg{
     transform: scale(1.2);
     transition: transform .4s;
+}
+
+.card-header h3,
+.card-header small,
+.card-header p,
+.card-header div
+{
+    display: block;
+    margin-bottom: 5px;
 }

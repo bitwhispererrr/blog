@@ -8,11 +8,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import Navbar from "./navbar"
+import NavItem from "./navItem"
 
 import "./layout.css"
 import "./colors.css"
-import Navbar from "./navbar"
-import NavItem from "./navItem"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -27,12 +27,12 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
       <Navbar>
-        <NavItem name={'home'} />
-        <NavItem name={'work'} />
-        <NavItem name={'blog'} />
-        <NavItem name={'about'} />
+        <NavItem name={'home'} icon="home" />
+        <NavItem name={'skills'} icon="terminal-box" />
+        <NavItem name={'blog'} icon="edit" />
+        <NavItem name={'about'} icon="account-box" />
+        <NavItem name={'contact'} icon="mail" />
       </Navbar>
       <main>{children}</main>
       <footer style={{ position: "fixed", bottom: 0, width: "100%" }}>

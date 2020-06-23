@@ -1,32 +1,11 @@
 :root{
     --white: #f6f6f6;
-    --primary: #00bb99;
-    --secondary: #00ee4f;
+    --primary: #00ee4f;
+    --secondary: #61E135;
     --dark: #292929;
     --grey: #5f5f5f;
     --light-grey: #000000;
 }
-
-nav{
-    background-color: var(--grey);
-    color: white;
-}
-
-nav div path,
-nav div line,
-nav div svg{
-    stroke: currentColor;
-    width: 25px;
-}
-
-nav div{
-    color: var(--white);
-}
-
-nav div:hover{
-    color: var(--primary);
-}
-
 
 .primary{
     color: var(--primary);
@@ -66,4 +45,37 @@ nav div:hover{
 
 .bg-light-grey{
     background-color: var(--light-grey);
+}
+
+nav{
+    background-color: var(--grey);
+    color: white;
+}
+
+nav div path,
+nav div line,
+nav div svg{
+    stroke: currentColor;
+    width: 25px;
+}
+
+nav div{
+    color: var(--white);
+}
+
+nav div:hover{
+    color: var(--primary);
+}
+
+.social a,
+.social a:hover,
+.social a:visited,
+.social a:focus,
+.social a:active
+{
+    color: var(--white)
+}
+
+.social i:hover{
+    color: var(--primary)
 }
