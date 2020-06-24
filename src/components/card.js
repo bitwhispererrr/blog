@@ -1,11 +1,8 @@
 import React from 'react'
-import { withAssetPrefix } from 'gatsby'
+import { Link } from '@reach/router'
+// import { withAssetPrefix } from 'gatsby'
 
-const Card = ({ title, summary, date, imgURL }) => {
-    title = "Testing Some Title..."
-    summary = "First article in the ReactJS beginner series >"
-    date = "Jan 21 2020"
-    imgURL = "https://picsum.photos/700/600"
+const Card = ({ article }) => {
     const cardStyles = { width: "33.3%", height: "100%", padding: "0 15px 0 15px", overflow: "hidden" };
     const cardContentStyles = {
         overflow: "hidden",
@@ -18,7 +15,7 @@ const Card = ({ title, summary, date, imgURL }) => {
         width: "100%",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        background: `url(${imgURL})`
+        background: `url(${article.displayImage.image.src})`
     }
 
     const cardHeaderStyles = {
@@ -32,16 +29,18 @@ const Card = ({ title, summary, date, imgURL }) => {
     }
     return (
         <div class="card" style={cardStyles}>
-            <div class="card-content" style={cardContentStyles}>
-                <div class="card-bg" style={cardBgStyles}>
+            <Link to={`/blog/${article.slug}`}>
+                <div class="card-content" style={cardContentStyles}>
+                    <div class="card-bg" style={cardBgStyles}>
+                    </div>
+                    <div className="card-header bg-grey" style={cardHeaderStyles}>
+                        <h3>{article.title}</h3>
+                        <small>{article.date}</small>
+                        <div>{article.description}</div>
+                    </div>
                 </div>
-                <div className="card-header bg-grey" style={cardHeaderStyles}>
-                    <h3>{title}</h3>
-                    <small>{date}</small>
-                    <div>{summary}</div>
-                </div>
-            </div>
 
+            </Link>
         </div>
     )
 }
