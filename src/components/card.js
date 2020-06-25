@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from '@reach/router'
+import Image from "gatsby-image"
 // import { withAssetPrefix } from 'gatsby'
 
 const Card = ({ article }) => {
@@ -9,13 +10,6 @@ const Card = ({ article }) => {
         position: "relative",
         height: "100%",
         width: "100%",
-    }
-    const cardBgStyles = {
-        height: "100%",
-        width: "100%",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        background: `url(${article.displayImage.image.src})`
     }
 
     const cardHeaderStyles = {
@@ -31,15 +25,16 @@ const Card = ({ article }) => {
         <div class="card" style={cardStyles}>
             <Link to={`/blog/${article.slug}`}>
                 <div class="card-content" style={cardContentStyles}>
-                    <div class="card-bg" style={cardBgStyles}>
-                    </div>
+                    {/* <div class="card-bg" style={cardBgStyles}> </div> */}
+                    <Image fluid={article.displayImage.image} />
                     <div className="card-header bg-grey" style={cardHeaderStyles}>
-                        <h3>{article.title}</h3>
-                        <small>{article.date}</small>
-                        <div>{article.description}</div>
+                        <article>
+                            <h3>{article.title}</h3>
+                            <small>{article.createdAt}</small>
+                            <p>{article.description}</p>
+                        </article>
                     </div>
                 </div>
-
             </Link>
         </div>
     )

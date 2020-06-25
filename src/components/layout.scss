@@ -9,6 +9,10 @@
     scroll-behavior: smooth;
 }
 
+a, a:hover{
+    text-decoration: none !important;
+}
+
 body{
     overflow: hidden;
 }
@@ -31,7 +35,6 @@ nav div{
     position: relative;
     align-items: center;
 
-    width: 30px;
     overflow: hidden;
     transition: all ease-in .2s;
 }
@@ -105,9 +108,6 @@ nav div:hover{
     margin: 10px auto
 }
 
-.social a{
-    text-decoration: none;
-}
 
 .social i{
     font-size: 25px;
@@ -135,15 +135,16 @@ nav div:hover{
 }
 /* blog card styles */
 .card .card-bg{
+    transform: scale(1);
     transition: transform .4s;
 }
 
-.card:hover .card-bg,
+.blog-card:hover .card-bg,
 .card-header:hover{
     cursor: pointer;
 }
 
-.card:hover .card-bg{
+.blog-card:hover .card-bg{
     transform: scale(1.2);
     transition: transform .4s;
 }
@@ -155,4 +156,42 @@ nav div:hover{
 {
     display: block;
     margin-bottom: 5px;
+}
+
+.card-header h3{
+    margin-top: 5px;
+}
+
+.input-row{
+    display: flex;
+}
+
+.input-row{
+    margin: 0px 5px 5px 5px;
+}
+
+input, textarea, button{
+    padding: 5px
+}
+
+input, textarea{
+    border-top:none;
+    border-right:none;
+    border-left:none;
+    border-bottom: 2px solid white;
+    color: white
+}
+
+input:focus::after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    height: 1px;
+    color: green
+}
+
+.content-right{
+    justify-content: flex-end;
 }
