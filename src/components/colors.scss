@@ -1,3 +1,5 @@
+$primary: #00ee4f;
+
 :root{
     --white: #f6f6f6;
     --primary: #00ee4f;
@@ -67,6 +69,21 @@ nav div:hover{
     color: var(--primary);
 }
 
+button{
+    border-color: var(--primary);
+}
+
+.btn-outline-primary{
+    color: $primary;
+    border-color: $primary;
+    background-color: transparent;
+}
+
+.btn-outline-primary:hover{
+    border-color: $primary;
+    background-color: var(--primary) !important;
+}
+
 .social a,
 .social a:hover,
 .social a:visited,
@@ -78,4 +95,8 @@ nav div:hover{
 
 .social i:hover{
     color: var(--primary)
+}
+
+input, textarea{
+    background-color: transparent;
 }

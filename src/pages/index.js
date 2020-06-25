@@ -5,6 +5,7 @@ import Page from "../components/page"
 import BlogCards from "../components/blogCards"
 import CodePattern from "../components/codePattern"
 import Logo from "../components/logo"
+import ContactForm from "../components/contactForm"
 
 const IndexPage = () => (
   <Layout>
@@ -29,7 +30,9 @@ const IndexPage = () => (
       <BlogCards></BlogCards>
     </Page>
     <Page bgColor="grey" id="about"></Page>
-    <Page bgColor="dark" id="contact"></Page>
+    <Page bgColor="dark" id="contact">
+      <ContactForm />
+    </Page>
   </Layout>
 )
 
