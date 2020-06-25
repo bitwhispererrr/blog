@@ -28,9 +28,9 @@ const Layout = ({ children }) => {
   return (
     <>
       <Navbar>
-        <NavItem name={'home'} icon="home" />
+        <NavItem name={'home'} path='' icon="home" />
         <NavItem name={'skills'} icon="terminal-box" />
-        <NavItem name={'blog'} icon="edit" />
+        <NavItem name={'blog'} path='posts' icon="edit" />
         <NavItem name={'about'} icon="account-box" />
         <NavItem name={'contact'} icon="mail" />
       </Navbar>
