@@ -74,12 +74,15 @@ button{
 }
 
 .btn-outline-primary{
+    border: 1px solid $primary;
     color: $primary;
     border-color: $primary;
     background-color: transparent;
 }
 
 .btn-outline-primary:hover{
+    cursor: pointer;
+    color: white;
     border-color: $primary;
     background-color: var(--primary) !important;
 }
