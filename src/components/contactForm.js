@@ -13,12 +13,13 @@ const ContactForm = () => {
                 </div>
                 <div className="input-row">
                     <input type="text" name="subject" placeholder="Subject" id="subject" style={{ width: "100%" }} />
+                    <span className="" />
                 </div>
                 <div className="input-row">
                     <textarea name="message" placeholder="Message" id="message" rows="5" style={{ width: "100%" }} />
                 </div>
                 <div className="input-row content-right">
-                    <button type="submit" className="btn btn-outline-primary px-5">Send</button>
+                    <button type="submit" className="btn btn-outline-primary px-5">Send&nbsp;<i className="ri-mail-send-line" style={{ verticalAlign: "middle" }} /></button>
                 </div>
             </form>
         </div>

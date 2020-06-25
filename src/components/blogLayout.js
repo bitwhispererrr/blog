@@ -2,10 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-// import "./layout.scss"
-// import "./colors.scss"
-
-const Layout = ({ children }) => {
+const BlogLayout = ({ children }) => {
     return (
         <>
             <main>{children}</main>
@@ -16,8 +13,8 @@ const Layout = ({ children }) => {
     )
 }
 
-Layout.propTypes = {
+BlogLayout.propTypes = {
     children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default BlogLayout
