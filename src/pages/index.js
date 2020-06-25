@@ -2,10 +2,8 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Page from "../components/page"
-import BlogCards from "../components/blogCards"
-import CodePattern from "../components/codePattern"
 import Logo from "../components/logo"
-import ContactForm from "../components/contactForm"
+import CodePattern from "../components/codePattern"
 
 const IndexPage = () => (
   <Layout>
@@ -24,14 +22,6 @@ const IndexPage = () => (
           </div>
         </div>
       </div>
-    </Page>
-    <Page bgColor="grey" id="skills"></Page>
-    <Page bgColor="dark" id="blog">
-      <BlogCards></BlogCards>
-    </Page>
-    <Page bgColor="grey" id="about"></Page>
-    <Page bgColor="dark" id="contact">
-      <ContactForm />
     </Page>
   </Layout>
 )

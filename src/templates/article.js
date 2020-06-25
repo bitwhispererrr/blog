@@ -1,11 +1,16 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import BlogLayout from '../components/blogLayout'
+import Image from "gatsby-image"
 
-const ArticleTemplate = ({ data }) =>
+const ArticleTemplate = ({ data: { article } }) =>
 
     <BlogLayout>
-        <h1>Article</h1>{JSON.stringify(data, null, 4)}
+        <h1>{article.title}</h1>
+        <small>{article.createdAt}</small>
+        <Image fluid={article.displayImage.image} />
+        <p>{documentToReactComponents(article.body.json)}</p>
     </BlogLayout>
 
 export const query = graphql`
@@ -13,13 +18,12 @@ query getSingleArticle($slug:String) {
   article: contentfulArticle(slug: {eq:$slug}) {
       title
       createdAt
-      body {
-        body
+      body{
+        json
       }
       displayImage {
-        fluid {
-          srcSet
-          tracedSVG
+        image:fluid {
+            ...GatsbyContentfulFluid
         }
       }
     }
