@@ -1,12 +1,11 @@
 import React from 'react'
-import Card from "../components/card"
 import { useStaticQuery, graphql } from "gatsby"
+import ArticlePreview from './articlePreview'
 
-
-const BlogCards = () => {
+const LatestArticles = () => {
   const data = useStaticQuery(graphql`
     {
-      allContentfulArticle(limit: 4) {
+      allContentfulArticle(limit: 1) {
         articles: nodes {
           title
           slug
@@ -30,12 +29,12 @@ const BlogCards = () => {
   const articles = data.allContentfulArticle.articles
   console.log(articles)
   return (
-    <div class="blog-cards">
+    <>
       {articles.map(a =>
-        <Card article={a} />
+        <ArticlePreview article={a} />
       )}
-    </div>
+    </>
   )
 }
 
-export default BlogCards;
+export default LatestArticles;
