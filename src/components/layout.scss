@@ -3,8 +3,6 @@
 *{
     padding: 0;
     margin: 0;
-    /* font-family: Arial, Helvetica, sans-serif; */
-    /* font-family: 'Roboto Mono', monospace; */
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
 }
@@ -13,8 +11,14 @@ a, a:hover{
     text-decoration: none !important;
 }
 
+main{
+    min-height: 95vh;
+}
+
 body{
-    overflow: hidden;
+    // overflow: hidden;
+    background-color: var(--dark);
+    color: white;
 }
 
 /* Navbar */
@@ -74,9 +78,9 @@ nav div:hover{
     top: 0;
     left: 0;
     right: 0;
-    z-index: -1;
     height: 100vh;
     display: flex;
+    // flex-wrap: wrap;
     text-align: center;
     vertical-align: middle;
     justify-content: center;
@@ -94,7 +98,7 @@ nav div:hover{
 /* offscreen page positions */
 
 .offscreen{
-    opacity: 0.1;
+    // opacity: 0.1;
     transition: opacity ease-in 0.6s;
 }
 
@@ -103,6 +107,11 @@ nav div:hover{
     transition: opacity ease-in 0.6s;
 }
 /* hero section bg */
+
+.logo path{
+    fill: none;
+    stroke: white;
+}
 
 .social{
     margin: 10px auto
@@ -133,20 +142,57 @@ nav div:hover{
     stroke-dasharray: 15px;
     stroke-dashoffset: 1px;
 }
-/* blog card styles */
-.card .card-bg{
-    transform: scale(1);
-    transition: transform .4s;
+
+//blog
+
+.blog-wrapper{
+    width: 70%;
+    margin: 0 auto;
 }
 
-.blog-card:hover .card-bg,
-.card-header:hover{
+.article-preview{
+    outline: 1px solid red;
+}
+
+article{
+    width: 50%;
+    margin: 0 auto;
+    padding: 15px;
+    // font-family;
+}
+.article-body{
+    font-size: 22px;
+    margin: 15px auto;
+}
+
+.image-wrapper{
+    width: 60%;
+    margin: 20px auto;
+}
+
+.article-preview .image-wrapper{
+    max-width: 50%;
+    margin: 0 auto 10px 0;
+}
+
+.read-more{
+    float: right;
+    border: 1px solid white;
+    padding: 5px;
+}
+
+.article-preview a{
+    margin-left: auto;
+    display: inline-block;
+}
+.card{ 
+    width: 33.3%; 
+    height: 100%; 
+    padding: 0 15px 0 15px
+}
+
+.card:hover{
     cursor: pointer;
-}
-
-.blog-card:hover .card-bg{
-    transform: scale(1.2);
-    transition: transform .4s;
 }
 
 .card-header h3,
@@ -160,7 +206,24 @@ nav div:hover{
 
 .card-header h3{
     margin-top: 5px;
+    font-size: 1.2rem;
 }
+
+.blog-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    height: 300px;
+}
+
+.card article{
+    width: 100%;
+    margin: unset;
+    padding: unset;
+}
+
+// contact form
 
 .input-row{
     display: flex;
@@ -198,4 +261,90 @@ input, textarea{
 
 .content-right{
     justify-content: flex-end;
+}
+
+.logo path:nth-child(1){
+    stroke-dasharray: 488px;
+    stroke-dashoffset: 488px;
+    animation: logo-anim 2s linear forwards 0.3s, fill-primary 2s ease forwards 2s, stroke-primary 2s ease forwards 2s;
+}
+.logo path:nth-child(2){
+    stroke-dasharray: 488px;
+    stroke-dashoffset: 488px;
+    animation: logo-anim 2s linear forwards 0.3s, fill-secondary 2s ease forwards 2s, stroke-secondary 2s ease forwards 2s;
+}
+.logo path:nth-child(3){
+    stroke-dasharray: 488px;
+    stroke-dashoffset: 488px;
+    animation: logo-anim 6s linear forwards 0.3s, fill-primary 2s ease forwards 2s, stroke-primary 2s ease forwards 2s;
+}
+.logo path:nth-child(4){
+    stroke-dasharray: 488px;
+    stroke-dashoffset: 488px;
+    animation: logo-anim 6s ease forwards 0.3s, fill-primary 2s ease forwards 2s, stroke-primary 2s ease forwards 2s;
+}
+
+@keyframes logo-anim{
+   to{
+       stroke-dashoffset: 0;
+   } 
+}
+
+@keyframes fill-primary{
+    from{
+        fill: transparent;
+    }
+    to{
+        fill: #61E136;
+    }
+}
+
+@keyframes fill-secondary{
+    from{
+        fill: transparent;
+    }
+    to{
+        fill: #2CAD4A;
+    }
+}
+
+@keyframes stroke-primary{
+    to{
+        stroke: #61E136; 
+    }
+}
+
+@keyframes stroke-secondary{
+    to{
+        stroke: #247D3A; 
+    }
+}
+
+@media only screen and (max-width: 580px){
+    .page{
+        flex-direction: column;
+    }
+
+    #summary,
+    .bg-pattern{
+        width: 100%;
+        padding: 15px;
+    }
+    // .bg-pattern{
+    //     order: 1;
+    // }
+    .card{ 
+        width: 100%; 
+        height: 100%; 
+        padding: 0 15px 0 15px
+    }
+
+    .blog-cards{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        height: 300px 
+    }
+
 }
