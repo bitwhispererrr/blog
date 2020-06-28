@@ -34,7 +34,11 @@ const Layout = ({ children }) => {
         <NavItem name={'about'} icon="account-box" />
         <NavItem name={'contact'} icon="mail" />
       </Navbar>
-      <main>{children}</main>
+      <main className="bg-dark">
+        <div className="content-wrapper">
+          {children}
+        </div>
+      </main>
       <footer style={{ position: "fixed", bottom: 0, width: "100%" }}>
         © {new Date().getFullYear()} Elias Nasrallah
         </footer>
