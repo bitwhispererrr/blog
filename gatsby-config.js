@@ -2,11 +2,15 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+const isProduction = process.env.NODE_ENV === 'production'
+
 module.exports = {
   siteMetadata: {
     title: `Elias Nasrallah | Full Stack Wev Developer`,
-    description: ``,
-    author: `@thebitwhisperer`,
+    description: '',
+    author: '@thebitwhisperer',
+    siteUrl: 'https://www.enasrallah.com/',
+    twitterHandle: '@thebitwhisperer'
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -46,6 +50,19 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              quality: 80,
+              backgroundColor: 'transparent',
+              maxWidth: 590,
+              withWebp: true,
+              tracedSVG: true
+            },
+          },
+          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               // Class prefix for <pre> tags containing syntax highlighting;
@@ -67,7 +84,11 @@ module.exports = {
               // setting this to '{ sh: "bash" }' will let you use
               // the language "sh" which will highlight using the
               // bash highlighter.
-              aliases: {},
+              aliases: {
+                sh: 'bash',
+                js: 'javascript',
+                py: 'python',
+              },
               // This toggles the display of line numbers globally alongside the code.
               // To use it, add the following line in gatsby-browser.js
               // right after importing the prism color scheme:

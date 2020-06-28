@@ -6,9 +6,9 @@ import Layout from '../components/layout'
 const Posts = () => {
     return (
         <Layout>
-            <Page bgColor="dark" id="blog">
+            <section className="page bg-dark">
                 <BlogCards></BlogCards>
-            </Page>
+            </section>
         </Layout>
     )
 }

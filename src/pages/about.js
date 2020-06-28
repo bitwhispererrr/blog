@@ -5,7 +5,8 @@ import Layout from '../components/layout'
 const About = () => {
     return (
         <Layout>
-            <Page bgColor="grey" id="about"></Page>
+            <section className="page bg-dark">
+            </section>
         </Layout>
     )
 }
