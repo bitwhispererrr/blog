@@ -5,7 +5,8 @@ import Layout from '../components/layout'
 const Skills = () => {
     return (
         <Layout>
-            <Page bgColor="grey" id="skills"></Page>
+            <section className="page bg-dark">
+            </section>
         </Layout>
     )
 }

@@ -2,10 +2,11 @@ import React from "react"
 import { graphql } from "gatsby"
 import BlogLayout from '../components/blogLayout'
 import Image from "gatsby-image"
+import Layout from "../components/layout"
 
 const ArticleTemplate = ({ data: { article } }) =>
 
-  <BlogLayout>
+  <Layout>
     <article className="bg-grey">
       <h1>{article.title}</h1>
       <small>{article.createdAt}</small>
@@ -18,7 +19,7 @@ const ArticleTemplate = ({ data: { article } }) =>
         }}
       />
     </article>
-  </BlogLayout>
+  </Layout>
 
 export const query = graphql`
 query getSingleArticle($slug:String) {
