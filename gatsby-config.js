@@ -3,6 +3,7 @@ require("dotenv").config({
 })
 
 const isProduction = process.env.NODE_ENV === 'production'
+CONTENTFUL_HOST = isProduction ? 'cdn.contentful.com' : 'preview.contentful.com'
 
 module.exports = {
   siteMetadata: {
@@ -42,7 +43,7 @@ module.exports = {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         // Learn about environment variables: https://gatsby.dev/env-vars
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-        host: `preview.contentful.com`,
+        host: CONTENTFUL_HOST,
       },
     },
     {
