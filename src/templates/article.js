@@ -1,24 +1,26 @@
 import React from "react"
 import { graphql } from "gatsby"
-import BlogLayout from '../components/blogLayout'
 import Image from "gatsby-image"
 import Layout from "../components/layout"
 
 const ArticleTemplate = ({ data: { article } }) =>
 
   <Layout>
-    <article className="bg-grey">
-      <h1>{article.title}</h1>
-      <small>{article.createdAt}</small>
-      <div className="image-wrapper">
-        <Image fluid={article.displayImage.image} />
-      </div>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: article.body.childMarkdownRemark.html
-        }}
-      />
-    </article>
+    <div className="article-wrapper">
+
+      <article className="bg-grey">
+        <h1>{article.title}</h1>
+        <small>{article.createdAt}</small>
+        <div className="image-wrapper">
+          <Image fluid={article.displayImage.image} />
+        </div>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: article.body.childMarkdownRemark.html
+          }}
+        />
+      </article>
+    </div>
   </Layout>
 
 export const query = graphql`
