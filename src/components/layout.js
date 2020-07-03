@@ -14,28 +14,18 @@ import NavItem from "./navItem"
 import "./layout.scss"
 import "./colors.scss"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
+const Layout = ({ children, wrapperClass }) => {
   return (
     <>
       <Navbar>
-        <NavItem name={'home'} path='' icon="home" />
+        <NavItem name={'home'} path='/' icon="home" />
         <NavItem name={'skills'} icon="terminal-box" />
-        <NavItem name={'blog'} path='posts' icon="edit" />
+        <NavItem name={'blog'} path='/posts' icon="edit" />
         <NavItem name={'about'} icon="account-box" />
         <NavItem name={'contact'} icon="mail" />
       </Navbar>
       <main className="bg-dark">
-        <div className="content-wrapper">
+        <div className={"content-wrapper " + wrapperClass}>
           {children}
         </div>
       </main>

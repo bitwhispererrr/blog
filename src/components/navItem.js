@@ -18,7 +18,7 @@ const NavItem = ({ name, icon, path = null }) => {
     }
     return (
         <div class="nav-item" data-target={name} onClick={() => switchPage(name)}>
-            <Link to={path ? `/${path}` : `/${name}`}>
+            <Link to={path ? path : `/${name}`}>
                 <i className={`ri-${icon}-line`} style={{ fontSize: "25px" }}></i>
                 <span>{name}</span>
             </Link>

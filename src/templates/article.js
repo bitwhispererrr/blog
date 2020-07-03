@@ -7,7 +7,6 @@ const ArticleTemplate = ({ data: { article } }) =>
 
   <Layout>
     <div className="article-wrapper">
-
       <article className="bg-grey">
         <h1>{article.title}</h1>
         <small>{article.createdAt}</small>

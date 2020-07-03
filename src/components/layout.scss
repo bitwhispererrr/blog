@@ -38,6 +38,16 @@ body{
     min-height: 100%;
 }
 
+.w-50{
+    width: 50% !important;
+    max-width: 50%;
+}
+
+.w-100{
+    width: 100% !important;
+    max-width: 100%;
+}
+
 /* Navbar */
 
 nav{
@@ -45,7 +55,8 @@ nav{
     position: fixed;
     flex-direction: column;
     justify-content: center;
-    top: 5%;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: .8rem;
     
 }
@@ -108,6 +119,8 @@ nav div:hover{
 
 .logo{
     margin: 0 auto;
+    height: 130px;
+    width: 115px;
 }
 
 .logo path{
@@ -211,11 +224,9 @@ code.language-shell:before {
 }
 
 article{
-    margin: 0 auto;
     padding: 15px;
-    width: 100%;
-    min-height: 100%;
 }
+
 .article-body{
     font-size: 22px;
     margin: 15px auto;
@@ -314,25 +325,60 @@ input, textarea{
     justify-content: flex-end;
 }
 
+//squares animation
+
+#squares{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(5px,5px));
+    // grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+//contact prompt animation
+#contact-prompt{
+    display: flex;
+    overflow: hidden;
+    height: 50px;
+}
+
+.words{
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+}
+
+.word{
+    text-align: center;
+    margin: 0 5px;
+}
+
+.word:not(.active){
+    opacity: 0;
+    transform: translateY(-50%);
+}
+
+.devicon{
+    display: flex;
+    width:50px;
+    margin: 10px;
+}
+
+//logo animation
+
 .logo path:nth-child(1){
-    stroke-dasharray: 488px;
-    stroke-dashoffset: 488px;
+    stroke-dasharray: 241.94;
+    stroke-dashoffset: 241.94;
     animation: logo-anim 2s linear forwards 0.3s, fill-primary 2s ease forwards 2s, stroke-primary 2s ease forwards 2s;
 }
 .logo path:nth-child(2){
-    stroke-dasharray: 488px;
-    stroke-dashoffset: 488px;
+    stroke-dasharray: 191.73;
+    stroke-dashoffset: 191.73;
     animation: logo-anim 2s linear forwards 0.3s, fill-secondary 2s ease forwards 2s, stroke-secondary 2s ease forwards 2s;
 }
 .logo path:nth-child(3){
-    stroke-dasharray: 488px;
-    stroke-dashoffset: 488px;
-    animation: logo-anim 6s linear forwards 0.3s, fill-primary 2s ease forwards 2s, stroke-primary 2s ease forwards 2s;
-}
-.logo path:nth-child(4){
-    stroke-dasharray: 488px;
-    stroke-dashoffset: 488px;
-    animation: logo-anim 6s ease forwards 0.3s, fill-primary 2s ease forwards 2s, stroke-primary 2s ease forwards 2s;
+    stroke-dasharray: 184.91;
+    stroke-dashoffset: 184.91;
+    animation: logo-anim 2s linear forwards 0.3s, fill-primary 2s ease forwards 2s, stroke-primary 2s ease forwards 2s;
 }
 
 @keyframes logo-anim{

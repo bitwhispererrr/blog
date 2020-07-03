@@ -2,9 +2,8 @@
 logs
 *.log
 
-# Environment variables
-*env.*
-.env.development
+#dotenv environment variable files
+.env*
 
 # Runtime data
 pids

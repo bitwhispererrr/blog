@@ -6,7 +6,8 @@ const NotFoundPage = () => (
   <>
     <SEO title="404: Not found" />
     <h1>NOT FOUND</h1>
-    <p>Nothing to see here :(</p>
+    <img src="./images/empty.png" />
+    <p>Nothing to look at here :(</p>
     <Link to="/">go home</Link>
   </>
 )
