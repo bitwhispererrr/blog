@@ -256,9 +256,7 @@ article{
 .blog-cards{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    // grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1.5rem;
-    padding:15px;
 }
 
 .card{
@@ -358,12 +356,16 @@ input, textarea{
 }
 
 .devicon{
-    display: flex;
+    // display: flex;
     width:50px;
     margin: 10px;
 }
 
 //logo animation
+.logo{
+    animation: slide-in 1s ease-in-out forwards 2s;
+    transform: translateX(40%);
+}
 
 .logo path:nth-child(1){
     stroke-dasharray: 241.94;
@@ -371,14 +373,33 @@ input, textarea{
     animation: logo-anim 2s linear forwards 0.3s, fill-primary 2s ease forwards 2s, stroke-primary 2s ease forwards 2s;
 }
 .logo path:nth-child(2){
-    stroke-dasharray: 191.73;
-    stroke-dashoffset: 191.73;
-    animation: logo-anim 2s linear forwards 0.3s, fill-secondary 2s ease forwards 2s, stroke-secondary 2s ease forwards 2s;
+    visibility: hidden;
+    fill: #2CAD4A;
+    stroke: #2CAD4A; 
+    animation: fade-in 0.7s ease-in-out forwards 3s;
 }
 .logo path:nth-child(3){
-    stroke-dasharray: 184.91;
-    stroke-dashoffset: 184.91;
-    animation: logo-anim 2s linear forwards 0.3s, fill-primary 2s ease forwards 2s, stroke-primary 2s ease forwards 2s;
+    visibility: hidden;
+    fill: #61E136;
+    stroke: #61E136; 
+    animation: fade-in 0.7s ease-in-out forwards 3s;
+}
+
+@keyframes slide-in{
+    to{
+        transform: translateX(-4%);
+    }
+}
+
+
+@keyframes fade-in{
+    from{
+        opacity: 0;
+    }
+    to{
+        visibility: visible;
+        opacity: 1;
+    }
 }
 
 @keyframes logo-anim{
@@ -396,27 +417,11 @@ input, textarea{
     }
 }
 
-@keyframes fill-secondary{
-    from{
-        fill: transparent;
-    }
-    to{
-        fill: #2CAD4A;
-    }
-}
-
 @keyframes stroke-primary{
     to{
         stroke: #61E136; 
     }
 }
-
-@keyframes stroke-secondary{
-    to{
-        stroke: #247D3A; 
-    }
-}
-
 
 
 @media only screen and (max-width: 580px){
@@ -454,6 +459,7 @@ input, textarea{
         flex-direction: row;
         justify-content: space-evenly;
         border-bottom: 4px solid var(--dark);
+        transform: unset;
     }
 
     nav div{

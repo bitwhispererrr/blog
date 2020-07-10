@@ -19,7 +19,7 @@ const Skills = () => {
                     <Devicons icon="sass" />
                     <Devicons icon="webpack" />
                     <Devicons icon="bootstrap" />
-                    <Devicons icon="git" />
+                    {/* <Devicons icon="git" /> */}
                 </div>
             </section>
         </Layout>
