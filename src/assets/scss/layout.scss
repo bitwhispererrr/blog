@@ -1,12 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-*{
+*:not(ul){
     padding: 0;
     margin: 0;
 }
 
 body{
     font-family: 'Poppins', sans-serif;
+}
+
+//scrollbar styles
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+pre{
+    ::-webkit-scrollbar {
+    width: 8px;
+    }
 }
 
 a, a:hover{
@@ -38,6 +51,14 @@ body{
     min-height: 100%;
 }
 
+.mb-1{
+    margin-bottom: 0.5rem
+}
+
+.mb-2{
+    margin-bottom: 0.7rem
+}
+
 .w-50{
     width: 50% !important;
     max-width: 50%;
@@ -46,6 +67,10 @@ body{
 .w-100{
     width: 100% !important;
     max-width: 100%;
+}
+
+button[class^=btn]:hover{
+    cursor: pointer;
 }
 
 /* Navbar */
@@ -167,43 +192,41 @@ nav div:hover{
     stroke-dashoffset: 1px;
 }
 
+// headers
+
+.highlight{
+ margin: 25px 0; 
+ padding-left: 10px;
+ &.left{
+    border-left: 4px solid var(--primary) 
+ }
+ &.right{
+    border-right: 4px solid var(--primary) 
+ }
+}
+
+.tags{
+ display: flex; 
+ margin: 10px 0; 
+ padding: 0;
+ flex-wrap: wrap;
+}
+
 //blog
 img {
   display: block;
   width: 100%;
 }
 
-h1,
-h2,
-h3 {
-  font-size: 2em;
-  font-weight: normal;
-}
-
-a {
-  color: currentColor;
-}
-
-p {
-  text-align: justify;
-}
-li{
-    list-style: inside;
-    margin-left: 15px;
-}
-
-// pre[class*='language-'] {
-//   white-space: pre-wrap;
+// code {
+//     font-family: 'Consolas','Bitstream Vera Sans Mono','Courier New',Courier,monospace !important;
 // }
-code {
-    font-family: 'Consolas','Bitstream Vera Sans Mono','Courier New',Courier,monospace !important;
-}
 
-code.language-bash:before,
-code.language-shell:before {
-  content: '$\00a0'; /*$ with non-breaking space*/
-  font-weight: bold;
-}
+// code.language-bash:before,
+// code.language-shell:before {
+//   content: '$\00a0'; /*$ with non-breaking space*/
+//   font-weight: bold;
+// }
 
 .blog-wrapper{
     width: 70%;
@@ -212,15 +235,6 @@ code.language-shell:before {
 
 .article-preview{
     outline: 1px solid red;
-}
-
-.article-wrapper{
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
 }
 
 article{
@@ -253,7 +267,7 @@ article{
     display: inline-block;
 }
 
-.blog-cards{
+.cards{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
@@ -293,8 +307,12 @@ article{
     margin: 0px 5px 5px 5px;
 }
 
-input, textarea, button{
+.btn, input, textarea{
     padding: 5px
+}
+
+.btn:hover{
+    cursor: pointer !important;
 }
 
 button{
@@ -356,9 +374,12 @@ input, textarea{
 }
 
 .devicon{
-    // display: flex;
     width:50px;
     margin: 10px;
+    display: flex;
+    svg{
+        width:100%;
+    }
 }
 
 //logo animation
@@ -385,46 +406,13 @@ input, textarea{
     animation: fade-in 0.7s ease-in-out forwards 3s;
 }
 
-@keyframes slide-in{
-    to{
-        transform: translateX(-4%);
-    }
-}
-
-
-@keyframes fade-in{
-    from{
-        opacity: 0;
-    }
-    to{
-        visibility: visible;
-        opacity: 1;
-    }
-}
-
-@keyframes logo-anim{
-   to{
-       stroke-dashoffset: 0;
-   } 
-}
-
-@keyframes fill-primary{
-    from{
-        fill: transparent;
-    }
-    to{
-        fill: #61E136;
-    }
-}
-
-@keyframes stroke-primary{
-    to{
-        stroke: #61E136; 
-    }
-}
 
 
 @media only screen and (max-width: 580px){
+
+    .content-wrapper{
+        margin-top: 55px;
+    }
     .page{
         flex-direction: column;
     }
@@ -439,18 +427,15 @@ input, textarea{
         width: auto;
     }
 
+    .cards{
+        padding: 0 15px
+    }
+
     .card{ 
         width: 100%; 
         height: 100%; 
-        padding: 0 15px 0 15px
     }
 
-    .blog-cards{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: auto;
-    }
     //nav
     nav{
         top: 0;
@@ -474,6 +459,10 @@ input, textarea{
 
     nav span{
         display: none;
+    }
+
+    .tag{
+        margin-bottom: 10px;
     }
 
 }

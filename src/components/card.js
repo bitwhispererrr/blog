@@ -5,7 +5,7 @@ import Image from "gatsby-image"
 
 const Card = ({ article }) => {
     return (
-        <div class="card">
+        <div class="card enter-bottom">
             <div className="card-image">
                 <Image fluid={article.displayImage.image} style={{ display: "block", width: "100%", maxWidth: "100%" }} />
             </div>

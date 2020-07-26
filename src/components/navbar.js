@@ -1,9 +1,14 @@
-import React, { Children } from 'react'
+import React from 'react'
+import NavItem from "./navItem"
 
-const Navbar = ({ children }) => {
+const Navbar = () => {
     return (
         <nav className="bg-grey">
-            {children}
+            <NavItem name={'home'} path='/' icon="home" />
+            <NavItem name={'skills'} icon="terminal-box" />
+            <NavItem name={'blog'} icon="edit" />
+            <NavItem name={'about'} icon="account-box" />
+            <NavItem name={'contact'} icon="mail" />
         </nav>
 
     )

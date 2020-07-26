@@ -7,25 +7,18 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 import Navbar from "./navbar"
-import NavItem from "./navItem"
 
-import "./layout.scss"
-import "./colors.scss"
+import "../assets/scss/layout.scss"
+import "../assets/scss/colors.scss"
+import "../assets/scss/animations.scss"
 
-const Layout = ({ children, wrapperClass }) => {
+const Layout = ({ children, wrapperClass = '' }) => {
   return (
     <>
-      <Navbar>
-        <NavItem name={'home'} path='/' icon="home" />
-        <NavItem name={'skills'} icon="terminal-box" />
-        <NavItem name={'blog'} path='/posts' icon="edit" />
-        <NavItem name={'about'} icon="account-box" />
-        <NavItem name={'contact'} icon="mail" />
-      </Navbar>
+      <Navbar />
       <main className="bg-dark">
-        <div className={"content-wrapper " + wrapperClass}>
+        <div className={`content-wrapper ${wrapperClass} `}>
           {children}
         </div>
       </main>

@@ -1,4 +1,6 @@
 $primary: #00ee4f;
+$lightGrey: #4242429e;
+$fadedGrey: #4242429e;
 
 :root{
     --white: #f6f6f6;
@@ -49,6 +51,16 @@ $primary: #00ee4f;
     background-color: var(--light-grey);
 }
 
+//scrollbar colors:
+
+::-webkit-scrollbar-thumb {
+  background: $fadedGrey; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $fadedGrey; 
+}
+
 a:focus,
 a:active,
 a:visited{
@@ -58,6 +70,10 @@ a:visited{
 
 nav{
     color: white;
+}
+
+b{
+    color: $primary
 }
 
 nav div path,
@@ -86,11 +102,24 @@ button{
     background-color: transparent;
 }
 
+.btn.active,
 .btn-outline-primary:hover{
     cursor: pointer;
     color: white;
     border-color: $primary;
-    background-color: var(--primary) !important;
+    background-color: var(--primary);
+}
+
+// .btn.active{
+//     color: #ffffff;
+//     background-color: $primary;
+// }
+
+.tag:not(.active):hover {
+    color: currentColor !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    border-color: currentColor !important;
 }
 
 .social a,

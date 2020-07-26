@@ -4,16 +4,17 @@ import Layout from '../components/layout'
 const Contact = () => {
     return (
         <Layout wrapperClass="w-100">
-            <div style={{ display: "flex", justifyContent: "center", alignContent: "center", flexWrap: "wrap", height: "100%" }}>
-                <div id="contact-prompt">
-                    <h1>Want to build</h1>
-                    <div class="words">
-                        <h1 className="word active">cool apps</h1>
-                        <h1 className="word">the web</h1>
-                        <h1 className="word">great things</h1>
-                    </div>
-                    <h1>together?</h1>
+            <h1 className="highlight left">Contact Me</h1>
+            <div id="contact-prompt">
+                <h1>Want to build</h1>
+                <div class="words">
+                    <h1 className="word active">cool apps</h1>
+                    <h1 className="word">the web</h1>
+                    <h1 className="word">great things</h1>
                 </div>
+                <h1>together?</h1>
+            </div>
+            <div style={{ display: "flex", justifyContent: "center", alignContent: "center", flexWrap: "wrap", height: "100%" }}>
                 <form method="post" netlify-honeypot="bot-field" data-netlify="true" name="contact">
                     <input type="hidden" name="bot-field" />
                     <input type="hidden" name="form-name" value="contact" />
