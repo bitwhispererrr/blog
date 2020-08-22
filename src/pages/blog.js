@@ -41,11 +41,13 @@ const Posts = () => {
     }
 
     return (
-        <Layout>
+        <Layout wrapperClass="pt-2">
             <h1 className="highlight left">Latest Articles</h1>
-            <ul className="tags enter-left">
-                {renderTags()}
-            </ul>
+            <div style={{ overflow: "hidden" }}>
+                <ul className="tags enter-left">
+                    {renderTags()}
+                </ul>
+            </div>
             <div style={cardsContainerStyles}>
                 <BlogCards selectedTags={selectedTags}></BlogCards>
             </div>

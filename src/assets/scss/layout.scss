@@ -59,6 +59,30 @@ body{
     margin-bottom: 0.7rem
 }
 
+.mt-1{
+    margin-top: 0.5rem
+}
+
+.mt-2{
+    margin-top: 0.7rem
+}
+
+.pb-1{
+    padding-bottom: 0.5rem
+}
+
+.pb-2{
+    padding-bottom: 0.7rem
+}
+
+.pt-1{
+    padding-top: 0.5rem
+}
+
+.pt-2{
+    padding-top: 0.7rem
+}
+
 .w-50{
     width: 50% !important;
     max-width: 50%;
@@ -275,6 +299,9 @@ article{
 
 .card{
     width:100%;
+    .gatsby-image-wrapper{
+        height: 150px;
+    }
 }
 
 .card:hover{
@@ -288,8 +315,7 @@ article{
 
 .card-header{
     text-align: left;
-    padding-right: 5px;
-    padding-left: 5px;
+    padding: 10px;
 }
 
 .card-header h3{
@@ -298,6 +324,14 @@ article{
 
 
 // contact form
+.word{
+
+}
+
+.word.hidden{
+    transform: rotateX(-90deg);
+    transition: all 1s ease-in-out;
+}
 
 .input-row{
     display: flex;
@@ -315,16 +349,22 @@ article{
     cursor: pointer !important;
 }
 
-button{
-    font-size: 14px;
-}
-
 input, textarea{
     border-top:none;
     border-right:none;
     border-left:none;
     border-bottom: 2px solid white;
     color: white
+}
+
+input{
+    height: 35px;
+    font-size: 1.3rem;
+}
+
+textarea{
+    height: 150px;
+    font-size: 1.5rem
 }
 
 .input-row:focus {
@@ -337,40 +377,20 @@ input, textarea{
     background-color: green
 }
 
+button{
+    font-size: 1.3rem;
+}
+
 .content-right{
     justify-content: flex-end;
 }
 
-//squares animation
-
-#squares{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(5px,5px));
-    // grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-}
 
 //contact prompt animation
 #contact-prompt{
     display: flex;
     overflow: hidden;
     height: 50px;
-}
-
-.words{
-    display: flex;
-    flex-direction: column;
-    max-height: 100%;
-}
-
-.word{
-    text-align: center;
-    margin: 0 5px;
-}
-
-.word:not(.active){
-    opacity: 0;
-    transform: translateY(-50%);
 }
 
 .devicon{
@@ -382,30 +402,20 @@ input, textarea{
     }
 }
 
-//logo animation
-.logo{
-    animation: slide-in 1s ease-in-out forwards 2s;
-    transform: translateX(40%);
-}
-
 .logo path:nth-child(1){
     stroke-dasharray: 241.94;
     stroke-dashoffset: 241.94;
-    animation: logo-anim 2s linear forwards 0.3s, fill-primary 2s ease forwards 2s, stroke-primary 2s ease forwards 2s;
 }
 .logo path:nth-child(2){
     visibility: hidden;
     fill: #2CAD4A;
     stroke: #2CAD4A; 
-    animation: fade-in 0.7s ease-in-out forwards 3s;
 }
 .logo path:nth-child(3){
     visibility: hidden;
     fill: #61E136;
     stroke: #61E136; 
-    animation: fade-in 0.7s ease-in-out forwards 3s;
 }
-
 
 
 @media only screen and (max-width: 580px){

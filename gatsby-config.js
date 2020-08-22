@@ -136,9 +136,17 @@ module.exports = {
         ],
       },
     },
+    // {
+    //   resolve: `gatsby-plugin-social9-socialshare`,
+    //   options: {
+    //     content:  `db5a9a9f6b5347ff94fba3455a6d407f`,
+    //     async:  true,
+    //     defer:  true
+    //   },
+    // }
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }

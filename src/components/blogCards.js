@@ -3,7 +3,7 @@ import Card from "../components/card"
 import { useStaticQuery, graphql } from "gatsby"
 
 
-const BlogCards = ({ selected_tags }) => {
+const BlogCards = ({ selectedTags }) => {
   const data = useStaticQuery(graphql`
     {
       allContentfulArticle(limit: 4) {
@@ -30,10 +30,15 @@ const BlogCards = ({ selected_tags }) => {
     }
   `)
   const article_list = data.allContentfulArticle.articles
+  console.log(article_list)
   return (
     <div class="cards">
-      {article_list.map(a =>
-        < Card article={a} />
+      {article_list.map(article =>{
+        const articleTags = article.tags ? article.tags.map(a=>a.name) : []
+        const tagNames = selectedTags.map(t=>t.name)
+        const includedArticles = tagNames.filter(tag => articleTags.includes(tag))
+        return includedArticles.length || !tagNames.length ? <Card article={article} /> : null
+      }
       )}
     </div>
   )

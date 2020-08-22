@@ -1,30 +1,133 @@
 
 .enter-bottom{
-    animation: enter-bottom 0.5s ease-in-out forwards;
+    animation: enter-bottom 0.75s ease-in-out forwards;
 }
 
 .enter-left{
-    animation: enter-left 0.5s ease-in-out forwards;
+    animation: enter-left 0.75s ease-in-out forwards;
 }
 
-.fade-in{
+.fade-in-up{
     visibility: hidden;
-    animation: fade-in 0.9s ease-in-out forwards 3s;
+    animation: fade-in-up 0.9s ease-in-out forwards;
+}
+
+.hero-text{
+    visibility: hidden;
+    animation: fade-in-up 1s ease-in-out forwards 4.25s;
+}
+
+.social a{
+    transform: scale(0);
+    text-align: center;
+    vertical-align: middle;
+    &:nth-child(1){
+        animation: pop-in 0.3s ease-in forwards 4.65s;
+    }
+    &:nth-child(2){
+        animation: pop-in 0.3s ease-in forwards 4.85s;
+    }
+    &:nth-child(3){
+        animation: pop-in 0.3s ease-in forwards 4.90s;
+    }
+    &:nth-child(4){
+        animation: pop-in 0.3s ease-in forwards 4.93s;
+    }
+}
+
+.skills p{
+    visibility: hidden;
+    &:nth-child(1){
+        animation: fade-in-up 0.9s ease-in-out forwards;
+    }
+    &:nth-child(2){
+        animation: fade-in-up 0.9s ease-in-out forwards 0.25s;
+    }
+    &:nth-child(3){
+        animation: fade-in-up 0.9s ease-in-out forwards 0.5s;
+    }
+    &:nth-child(4){
+        animation: fade-in-up 0.9s ease-in-out forwards 0.75s;
+    }
+    &:nth-child(5){
+        animation: fade-in-up 0.9s ease-in-out forwards 1s;
+    }
+}
+
+
+.devicon.pop-in{
+    transform: scale(0);
+    &:nth-child(1){
+        animation: pop-in 0.3s ease-in forwards 1.25s;
+    }
+    &:nth-child(2){
+        animation: pop-in 0.3s ease-in forwards 1.30s;
+    }
+    &:nth-child(3){
+        animation: pop-in 0.3s ease-in forwards 1.40s;
+    }
+    &:nth-child(4){
+        animation: pop-in 0.3s ease-in forwards 1.45s;
+    }
+    &:nth-child(5){
+        animation: pop-in 0.3s ease-in forwards 1.33s;
+    }
+    &:nth-child(6){
+        animation: pop-in 0.3s ease-in forwards 1.46s;
+    }
+    &:nth-child(7){
+        animation: pop-in 0.3s ease-in forwards 1.56s;
+    }
+    &:nth-child(8){
+        animation: pop-in 0.3s ease-in forwards 1.65s;
+    }
+    &:nth-child(9){
+        animation: pop-in 0.3s ease-in forwards 1.72s;
+    }
+    &:nth-child(10){
+        animation: pop-in 0.3s ease-in forwards 1.75s;
+    }
+    &:nth-child(11){
+        animation: pop-in 0.3s ease-in forwards 1.79s;
+    }
+    &:nth-child(12){
+        animation: pop-in 0.3s ease-in forwards 1.83s;
+    }
+    &:nth-child(13){
+        animation: pop-in 0.3s ease-in forwards 1.808s;
+    }
+}
+
+//logo animation
+.logo{
+    transform: translate(50%, 50%) scale(1.5);
+    animation: slide-in 1.25s ease-in-out forwards 2.75s;
 }
 
 .logo path:nth-child(1){
-    animation: logo-anim 2s linear forwards 0.3s, fill-primary 2s ease forwards 2s, stroke-primary 2s ease forwards 2s;
+animation: logo-anim 2s linear forwards 0.3s, fill-primary 2s ease forwards 2s, stroke-primary 2s ease forwards 2s;
 }
-.logo path:nth-child(2){
-    animation: fade-in 0.7s ease-in-out forwards 3s;
-}
+
+.logo path:nth-child(2),
 .logo path:nth-child(3){
-    animation: fade-in 0.7s ease-in-out forwards 3s;
+    animation: fade-in 0.7s ease-in-out forwards 3.75s;
 }
-//keyframse
+
+
+@keyframes pop-in{
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 @keyframes slide-in{
     to{
-        transform: translateX(-4%);
+        transform: translateX(0);
     }
 }
 
@@ -58,6 +161,18 @@
     to{
         visibility: visible;
         opacity: 1;
+    }
+}
+
+@keyframes fade-in-up{
+    from{
+        opacity: 0;
+        transform: translateY(20%)
+    }
+    to{
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(10%)
     }
 }
 

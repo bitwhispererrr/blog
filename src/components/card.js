@@ -7,7 +7,7 @@ const Card = ({ article }) => {
     return (
         <div class="card enter-bottom">
             <div className="card-image">
-                <Image fluid={article.displayImage.image} style={{ display: "block", width: "100%", maxWidth: "100%" }} />
+                <Image fluid={article.displayImage.image} style={{ display: "block", width: "100%", maxWidth: "100%", height:"165px" }} />
             </div>
             <div className="card-header bg-grey">
                 <Link to={`/blog/${article.slug}`}>

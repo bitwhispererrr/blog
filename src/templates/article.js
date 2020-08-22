@@ -2,10 +2,12 @@ import React from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const ArticleTemplate = ({ data: { article } }) =>
 
   <Layout>
+    <SEO title={article.title} description={article.description} />
     <article className="bg-grey">
       <h1>{article.title}</h1>
       <small>{article.createdAt}</small>

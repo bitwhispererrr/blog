@@ -60,7 +60,7 @@ const iconMap = {
 
 const Devicons = ({ icon, styles }) => {
     console.log(styles)
-    return <div className="devicon" style={styles}>{iconMap[icon]}</div>
+    return <div className="devicon pop-in" style={styles}>{iconMap[icon]}</div>
 }
 
 export default Devicons
