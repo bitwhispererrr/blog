@@ -2,12 +2,10 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Logo from "../components/logo"
-import Polygons from "../components/polygons"
 
 const IndexPage = () => (
   <Layout>
     <SEO />
-    <Polygons />
     <div id="hero">
       <Logo />
       <div className="light hero-text">
