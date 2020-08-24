@@ -14,11 +14,11 @@ const Contact = () => {
         })
     }
 
-    setInterval(animatePrompt, 4000)
+    // setInterval(animatePrompt, 4000)
     return (
-        <Layout wrapperClass="w-50">
-            <h1 className="highlight left">Contact Me</h1>
-            <div style={{ display: "", justifyContent: "center", alignContent: "center", flexWrap: "wrap", height: "100%" }}>
+        <Layout >
+            <div className="px-15">
+                <h1 className="highlight left">Contact Me</h1>
                 <div id="contact-prompt">
                     <h1>Want to build &nbsp;</h1>
                     <h1 className="word"> cool apps ?</h1>

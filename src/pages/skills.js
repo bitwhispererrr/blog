@@ -6,9 +6,9 @@ import Devicons from '../components/devicons'
 const Skills = () => {
     return (
         <Layout>
-            <article className="skills">
+            <article className="skills px-15">
                 <h1 className="highlight left">Skills and Experience</h1>
-                <p className="mb-2">
+                <p className="mb-2 fade-in-up">
                     My main area of expertise is web development using <b>Django</b> along with <b>MySQL</b>, <b>MongoDB</b> and <b>Redis</b> on the backend.
                     On the frontend, I mostly work  with <b>ReactJS</b> along with tools including <b>Redux</b>, <b>Webpack</b>, and <b>Sass</b>.
                 </p>

@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-*:not(ul){
-    padding: 0;
+body{
     margin: 0;
 }
 
@@ -18,7 +17,7 @@ body{
 
 pre{
     ::-webkit-scrollbar {
-    width: 8px;
+        width: 8px;
     }
 }
 
@@ -51,6 +50,13 @@ body{
     min-height: 100%;
 }
 
+.m-1{
+    margin: 0.5rem
+}
+.m-2{
+    margin: 0.7rem
+}
+
 .mb-1{
     margin-bottom: 0.5rem
 }
@@ -67,6 +73,13 @@ body{
     margin-top: 0.7rem
 }
 
+.p-1{
+    padding: 0.5rem
+}
+.p-2{
+    padding: 0.7rem
+}
+
 .pb-1{
     padding-bottom: 0.5rem
 }
@@ -81,6 +94,11 @@ body{
 
 .pt-2{
     padding-top: 0.7rem
+}
+
+.px-15{
+    padding-left: 15px;
+    padding-right: 15px
 }
 
 .w-50{
@@ -252,6 +270,10 @@ img {
 //   font-weight: bold;
 // }
 
+li p{
+    margin: .5rem 0;
+}
+
 .blog-wrapper{
     width: 70%;
     margin: 0 auto;
@@ -259,10 +281,6 @@ img {
 
 .article-preview{
     outline: 1px solid red;
-}
-
-article{
-    padding: 15px;
 }
 
 .article-body{
@@ -325,7 +343,7 @@ article{
 
 // contact form
 .word{
-
+    transition: all 1s ease-in-out;
 }
 
 .word.hidden{
@@ -390,7 +408,7 @@ button{
 #contact-prompt{
     display: flex;
     overflow: hidden;
-    height: 50px;
+    // height: 50px;
 }
 
 .devicon{
@@ -435,10 +453,6 @@ button{
 
     article{
         width: auto;
-    }
-
-    .cards{
-        padding: 0 15px
     }
 
     .card{ 

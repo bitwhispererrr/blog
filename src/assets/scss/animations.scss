@@ -104,6 +104,12 @@
     animation: slide-in 1.25s ease-in-out forwards 2.75s;
 }
 
+#logo-caret{
+    height: 100%;
+    background: green;
+    width: 50px;
+}
+
 .logo path:nth-child(1){
 animation: logo-anim 2s linear forwards 0.3s, fill-primary 2s ease forwards 2s, stroke-primary 2s ease forwards 2s;
 }
@@ -127,7 +133,7 @@ animation: logo-anim 2s linear forwards 0.3s, fill-primary 2s ease forwards 2s, 
 
 @keyframes slide-in{
     to{
-        transform: translateX(0);
+        transform: translateX(-5px);
     }
 }
 

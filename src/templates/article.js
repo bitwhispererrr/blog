@@ -8,7 +8,7 @@ const ArticleTemplate = ({ data: { article } }) =>
 
   <Layout>
     <SEO title={article.title} description={article.description} />
-    <article className="bg-grey">
+    <article className="bg-grey px-15 pt-2 pb-2">
       <h1>{article.title}</h1>
       <small>{article.createdAt}</small>
       <div className="image-wrapper">

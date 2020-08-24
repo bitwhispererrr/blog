@@ -22,9 +22,9 @@ const Layout = ({ children, wrapperClass = '' }) => {
           {children}
         </div>
       </main>
-      <footer style={{ position: "fixed", bottom: 0, width: "100%" }}>
+      {/* <footer style={{textAlign:"center", width: "100%" }}>
         © {new Date().getFullYear()} Elias Nasrallah
-        </footer>
+        </footer> */}
     </>
   )
 }

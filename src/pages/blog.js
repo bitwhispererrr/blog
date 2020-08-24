@@ -42,14 +42,16 @@ const Posts = () => {
 
     return (
         <Layout wrapperClass="pt-2">
-            <h1 className="highlight left">Latest Articles</h1>
-            <div style={{ overflow: "hidden" }}>
-                <ul className="tags enter-left">
-                    {renderTags()}
-                </ul>
-            </div>
-            <div style={cardsContainerStyles}>
-                <BlogCards selectedTags={selectedTags}></BlogCards>
+            <div className="px-15">
+                <h1 className="highlight left">Latest Articles</h1>
+                <div style={{ overflow: "hidden" }}>
+                    <ul className="tags enter-left">
+                        {renderTags()}
+                    </ul>
+                </div>
+                <div style={cardsContainerStyles}>
+                    <BlogCards selectedTags={selectedTags}></BlogCards>
+                </div>
             </div>
         </Layout>
     )
