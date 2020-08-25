@@ -1,11 +1,13 @@
 import React from 'react'
 import Layout from '../components/layout'
 import Devicons from '../components/devicons'
+import SEO from '../components/seo'
 
 
 const Skills = () => {
     return (
         <Layout>
+            <SEO title="Elias Nasrallah - Fullstack Web Developer | Skills and Experience" description="I am a fullstack web developer experienced in building web applications, APIs, and custom CMS. My skills include Django Framework, ReactJS, Redux, Webpack, MySQL, MongoDB, and AWS."/>
             <article className="skills px-15">
                 <h1 className="highlight left">Skills and Experience</h1>
                 <p className="mb-2 fade-in-up">

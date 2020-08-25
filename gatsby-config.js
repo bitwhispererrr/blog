@@ -8,7 +8,7 @@ CONTENTFUL_HOST = isProduction ? 'cdn.contentful.com' : 'preview.contentful.com'
 module.exports = {
   siteMetadata: {
     title: `Elias Nasrallah | Full Stack Wev Developer`,
-    description: '',
+    description: 'Hi, I am Elias, and this is my personal portfolio and blog where I share tutorials and tips on several web development topics including backend and frontend technologies, web app security, best practices, and much more.',
     author: '@thebitwhisperer',
     siteUrl: 'https://www.enasrallah.com/',
     twitterHandle: '@thebitwhisperer'
@@ -143,7 +143,7 @@ module.exports = {
     //     async:  true,
     //     defer:  true
     //   },
-    // }
+    // },
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

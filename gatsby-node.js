@@ -13,6 +13,7 @@ exports.createPages = async ({ graphql, actions }) => {
     `)
 
     result.data.articles.nodes.forEach((article) => {
+        console.log(article)
         createPage({
             path: `/blog/${article.slug}`,
             component: path.resolve('src/templates/article.js'),

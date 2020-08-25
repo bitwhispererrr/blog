@@ -1,27 +1,28 @@
 import React from 'react'
 import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 const Contact = () => {
-    const animatePrompt= function(){
-        const words = ['cool apps ?', 'awesome shit ?']
-        words.map(word => {
-            const wordElement = document.querySelector('.word')
-            wordElement.classList.toggle('hidden')
-            wordElement.innerHTML = word;
-            setTimeout(2000, ()=>wordElement.classList.toggle('hidden'))
-            setTimeout(1000, ()=>console.log('blah'))
+    // const animatePrompt= function(){
+    //     const words = ['cool apps ?', 'awesome shit ?']
+    //     words.map(word => {
+    //         const wordElement = document.querySelector('.word')
+    //         wordElement.classList.toggle('hidden')
+    //         wordElement.innerHTML = word;
+    //         setTimeout(2000, ()=>wordElement.classList.toggle('hidden'))
+    //         setTimeout(1000, ()=>console.log('blah'))
             
-        })
-    }
+    //     })
+    // }
 
     // setInterval(animatePrompt, 4000)
     return (
         <Layout >
+            <SEO title="Elias Nasrallah - Fullstack Web Developer | Contact Me" description="Contact me. Want to collaborate on a project or lookign to hire a fullstack web developer? You can reach me on elias.nsralah[AT]gmail[dOt]com. You can also find me on twitter and instagram: @thebitwhisperer"/>
             <div className="px-15">
                 <h1 className="highlight left">Contact Me</h1>
                 <div id="contact-prompt">
-                    <h1>Want to build &nbsp;</h1>
-                    <h1 className="word"> cool apps ?</h1>
+                    <h1>Let's get in touch!</h1>
                 </div>
                 <form method="post" netlify-honeypot="bot-field" data-netlify="true" name="contact" className="fade-in-up">
                     <input type="hidden" name="bot-field" />

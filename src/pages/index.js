@@ -5,7 +5,7 @@ import Logo from "../components/logo"
 
 const IndexPage = () => (
   <Layout>
-    <SEO />
+    <SEO title="Elias Nasrallah - Fullstack Web Developer" description="Hi, I am Elias, and this is my personal portfolio and blog where I share tutorials and tips on several web development topics including backend and frontend technologies, web app security, best practices, and much more."/>
     <div id="hero">
       <Logo />
       <div className="light hero-text">
