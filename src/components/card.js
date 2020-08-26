@@ -5,17 +5,17 @@ import Image from "gatsby-image"
 
 const Card = ({ article }) => {
     return (
+        <Link to={`/blog/${article.slug}`}>
         <div class="card enter-bottom">
             <div className="card-image">
                 <Image fluid={article.displayImage.image} style={{ display: "block", width: "100%", maxWidth: "100%", height:"165px" }} />
             </div>
             <div className="card-header bg-grey">
-                <Link to={`/blog/${article.slug}`}>
                     <h3>{article.title}</h3>
-                </Link>
                 <small>{article.createdAt}</small>
             </div>
         </div>
+        </Link>
     )
 }
 export default Card;

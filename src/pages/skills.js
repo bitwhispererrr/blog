@@ -8,7 +8,7 @@ const Skills = () => {
     return (
         <Layout>
             <SEO title="Elias Nasrallah - Fullstack Web Developer | Skills and Experience" description="I am a fullstack web developer experienced in building web applications, APIs, and custom CMS. My skills include Django Framework, ReactJS, Redux, Webpack, MySQL, MongoDB, and AWS."/>
-            <article className="skills px-15">
+            <div className="skills px-15">
                 <h1 className="highlight left">Skills and Experience</h1>
                 <p className="mb-2 fade-in-up">
                     My main area of expertise is web development using <b>Django</b> along with <b>MySQL</b>, <b>MongoDB</b> and <b>Redis</b> on the backend.
@@ -23,7 +23,7 @@ const Skills = () => {
                 <p className="mb-2">
                     While web development is my focus, I also enjoy dabbling in different areas of tech, mainly electronics, networking and security.
                 </p>
-            </article>
+            </div>
             <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}>
                 <Devicons icon="python" />
                 <Devicons icon="javascript" />

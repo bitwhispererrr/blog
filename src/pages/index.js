@@ -10,7 +10,7 @@ const IndexPage = () => (
       <Logo />
       <div className="light hero-text">
         <h1 className="text-center" style={{margin:"0"}}>elias nasrallah</h1>
-        <p className="text-center">Fullstack web developer mostly dabbling with python, django, and react.</p>
+        <p className="text-center px-15">Fullstack web developer mostly dabbling with python, django, and react.</p>
         <div className="social text-center">
           <a href="https://twitter.com/thebitwhisperer" target="_blank" rel="noreferrer" className="pop-in"><i className="ri-twitter-line"></i></a>
           <a href="https://www.linkedin.com/in/elias-nasrallah/" target="_blank" rel="noreferrer" className="pop-in"><i className="ri-linkedin-fill"></i></a>

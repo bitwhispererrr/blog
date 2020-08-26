@@ -2,13 +2,14 @@ import React, { useState } from 'react'
 import BlogCards from "../components/blogCards"
 import Layout from '../components/layout'
 import { useStaticQuery, graphql } from "gatsby"
+import SEO from '../components/seo'
 
 
 
 const Posts = () => {
     const tagsQuery = useStaticQuery(graphql`
         {
-        allContentfulTag(limit: 4) {
+        allContentfulTag{
             tags: nodes { name }
         }
         }
@@ -25,13 +26,15 @@ const Posts = () => {
     }
 
     const renderTags = () => tag_list.map(tag =>
+        tag.name?
         <li
-            className={`btn btn-outline-primary tag text-center ${selectedTags.includes(tag) ? 'active' : ''}`}
+            className={`btn btn-outline-primary tag text-center mb-1 ${selectedTags.includes(tag) ? 'active' : ''}`}
             style={{ listStyleType: "none", marginRight: "15px", display: "flex", alignItems: "center" }}
             onClick={() => onTagClick(tag)}
         >
             <i className={`ri-bookmark-${selectedTags.includes(tag) ? 'fill' : 'line'}`} style={{ marginRight: "5px" }} /> {tag.name}
         </li>
+        :null
     )
 
     const cardsContainerStyles = {
@@ -42,6 +45,7 @@ const Posts = () => {
 
     return (
         <Layout wrapperClass="pt-2">
+            <SEO title="WebDev Blog - Elias Nasrallah" description="This site is intended as my personal portfolio, as well as a place for sharing programming tutorials, project demos, and tips and tricks on various software engineering topics."/>
             <div className="px-15">
                 <h1 className="highlight left">Latest Articles</h1>
                 <div style={{ overflow: "hidden" }}>
