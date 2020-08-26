@@ -16,8 +16,14 @@ const NavItem = ({ name, icon, path = null }) => {
             else { p.classList.remove('active') }
         })
     }
+
+    const isActive = function (name){
+        const location = document.location.pathname.split('/')[1]
+        return (location == name || location=='' && name=='home') ? 'active' : ''
+    }
+
     return (
-        <div class="nav-item" data-target={name} onClick={() => switchPage(name)}>
+        <div className={`nav-item ${isActive(name)}`} data-target={name} onClick={() => switchPage(name)}>
             <Link to={path ? path : `/${name}`}>
                 <i className={`ri-${icon}-line`} style={{ fontSize: "25px" }}></i>
                 <span>{name}</span>

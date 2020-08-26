@@ -21,9 +21,9 @@ const Contact = () => {
             <SEO title="Elias Nasrallah - Fullstack Web Developer | Contact Me" description="Contact me. Want to collaborate on a project or lookign to hire a fullstack web developer? You can reach me on elias.nsralah[AT]gmail[dOt]com. You can also find me on twitter and instagram: @thebitwhisperer"/>
             <div className="px-15">
                 <h1 className="highlight left">Contact Me</h1>
-                <div id="contact-prompt">
+                {/* <div id="contact-prompt">
                     <h1>Let's get in touch!</h1>
-                </div>
+                </div> */}
                 <form method="post" netlify-honeypot="bot-field" data-netlify="true" name="contact" className="fade-in-up">
                     <input type="hidden" name="bot-field" />
                     <input type="hidden" name="form-name" value="contact" />

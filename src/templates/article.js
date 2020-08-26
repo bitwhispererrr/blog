@@ -10,7 +10,7 @@ const ArticleTemplate = ({ data: { article , site} }) =>{
     <Layout>
       <SEO title={article.title} description={article.description} ogImageUrl={article.displayImage.image.src}/>
       <article className="bg-grey px-15 pt-2 pb-2">
-        <h1 style={{margin:"0.5rem 0", fontSize:"2.2rem"}}>{article.title}</h1>
+        <h1 className="article-title">{article.title}</h1>
         <small>Published on {article.createdAt} - {article.daysAgo} </small>
         <Share
           socialConfig={{
@@ -26,6 +26,7 @@ const ArticleTemplate = ({ data: { article , site} }) =>{
           <Image fluid={article.displayImage.image} />
         </div>
         <div
+          style={{marginBottom:"2rem"}}
           dangerouslySetInnerHTML={{
             __html: article.body.childMarkdownRemark.html
           }}
