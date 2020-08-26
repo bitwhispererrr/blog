@@ -18,7 +18,7 @@ const NavItem = ({ name, icon, path = null }) => {
     }
 
     const isActive = function (name){
-        const location = document.location.pathname.split('/')[1]
+        const location = typeof window !=='undefined' ? window.location.pathname.split('/')[1] : ''
         return (location == name || location=='' && name=='home') ? 'active' : ''
     }
 
