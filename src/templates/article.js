@@ -7,9 +7,9 @@ import Share from "../components/Share"
 
 const ArticleTemplate = ({ data: { article , site} }) =>{
   return(
-    <Layout>
+    <Layout wrapperClass="bg-grey">
       <SEO title={article.title} description={article.description} ogImageUrl={article.displayImage.image.src}/>
-      <article className="bg-grey px-15 pt-2 pb-2">
+      <article className="px-15 pb-2">
         <h1 className="article-title">{article.title}</h1>
         <small>Published on {article.createdAt} - {article.daysAgo} </small>
         <Share

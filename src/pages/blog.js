@@ -44,10 +44,10 @@ const Posts = () => {
     }
 
     return (
-        <Layout wrapperClass="pt-2">
+        <Layout>
             <SEO title="WebDev Blog - Elias Nasrallah" description="This site is intended as my personal portfolio, as well as a place for sharing programming tutorials, project demos, and tips and tricks on various software engineering topics."/>
             <div className="px-15">
-                <h1 className="highlight left">Latest Articles</h1>
+                <h1 className="highlight left enter-left">Latest Articles</h1>
                 <div style={{ overflow: "hidden" }}>
                     <ul className="tags enter-left">
                         {renderTags()}
