@@ -4,6 +4,7 @@ import Image from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Share from "../components/Share"
+import moment from "moment"
 
 const ArticleTemplate = ({ data: { article , site} }) =>{
   return(
@@ -11,7 +12,7 @@ const ArticleTemplate = ({ data: { article , site} }) =>{
       <SEO title={article.title} description={article.description} ogImageUrl={article.displayImage.image.src}/>
       <article className="px-15 pb-2">
         <h1 className="article-title">{article.title}</h1>
-        <small>Published on {article.createdAt} - {article.daysAgo} </small>
+        <small>Published on {article.createdAt} - {moment(article.createdAt).fromNow()} </small>
         <Share
           socialConfig={{
             twitterHandle: site.siteMetadata.twitterHandle,

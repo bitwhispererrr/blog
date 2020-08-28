@@ -165,7 +165,7 @@ animation: logo-anim 2s linear forwards 0.3s, fill-primary 2s ease forwards 2s, 
 @keyframes enter-left{
     from{
         opacity: 0;
-        transform: translateX(-50%)
+        transform: translateX(-40%)
     }
     to{
         opacity: 1;
