@@ -41,6 +41,7 @@ function SEO({
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
   return (
     <Helmet
+      defer={false}
       htmlAttributes={{
         lang,
       }}
