@@ -40,102 +40,142 @@ function SEO({
   const image = logo
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
   return (
-    <Helmet
-      defer={false}
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s` || site.siteMetadata.title}
-      link={
-        canonical
-          ? [
-              {
-                rel: "canonical",
-                href: canonical,
-              },
-            ]
-          : []
-      }
-      meta={[
-        {
-          name: `keywords`,
-          content: keywords || site.siteMetadata.keywords,
-        },
-        {
-          name: `description`,
-          content: description || metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: description || metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: image ? `summary_large_image` : `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: description || metaDescription,
-        },
-        {
-          name: `twitter:image`,
-          content: image,
-        },
-        {
-          name: `og:image`,
-          content: image,
-        },
-        {
-          name: `image`,
-          content: image,
-        },
-      ]
-        .concat(
-          metaImage
-            ? [
-                {
-                  property: "og:image",
-                  content: image,
-                },
-                {
-                  property: "og:image:width",
-                  content: metaImage.width,
-                },
-                {
-                  property: "og:image:height",
-                  content: metaImage.height,
-                },
-                {
-                  name: "twitter:card",
-                  content: "summary_large_image",
-                },
-              ]
-            : [
-                {
-                  name: "twitter:card",
-                  content: "summary",
-                },
-              ]
-        )
-        .concat(meta)}
-    />
+    <Helmet>
+      <title>{`%s` || site.siteMetadata.title}</title>
+      <link rel="canonical" href={canonical}></link>
+      <meta name="keywords" content={keywords || site.siteMetadata.keywords} />
+      <meta name="description" content={description || metaDescription} />
+      <meta name="subject" content="your website's subject" />
+      <meta name="language" content="EN" />
+      <meta name="robots" content="index,follow" />
+      {/* <meta name="abstract" content="" />
+      <meta name="topic" content="" />
+      <meta name="summary" content="" /> */}
+      <meta name="author" content="Elias Nasrallah, elias.nsralah@gmail.com" />
+      <meta name="owner" content="Elias Nasrallah" />
+      <meta name="url" content={site.siteMetadata.siteUrl} />
+      <meta name="identifier-URL" content={site.siteMetadata.siteUrl} />
+      <meta name="directory" content="submission" />
+      <meta name="category" content="Blog" />
+      <meta http-equiv="Cache-Control" content="no-cache" />
+
+      <meta property="og:title" content={title || site.siteMetadata.title} />
+      <meta property="og:type" content="site" />
+      <meta property="og:url" content={site.siteMetadata.siteUrl} />
+      <meta property="og:image" content={image} />
+      <meta property="og:site_name" content="Elias Nasrallah" />
+      <meta
+        property="og:description"
+        content={description || metaDescription}
+      />
+
+      <meta name="twitter:title" content={title}></meta>
+      <meta
+        name="twitter:description"
+        content={description || metaDescription}
+      ></meta>
+      <meta name="twitter:image" content={image}></meta>
+      <meta name="twitter:card" content="summary"></meta>
+
+      <meta name="og:email" content="elias.nsralah@gmail.com" />
+      <meta name="og:country-name" content="Lebanon" />
+    </Helmet>
+    // <Helmet
+    //   defer={false}
+    //   htmlAttributes={{
+    //     lang,
+    //   }}
+    //   title={title}
+    //   titleTemplate={`%s` || site.siteMetadata.title}
+    //   link={
+    //     canonical
+    //       ? [
+    //           {
+    //             rel: "canonical",
+    //             href: canonical,
+    //           },
+    //         ]
+    //       : []
+    //   }
+    //   meta={[
+    //     {
+    //       name: `keywords`,
+    //       content: keywords || site.siteMetadata.keywords,
+    //     },
+    //     {
+    //       name: `description`,
+    //       content: description || metaDescription,
+    //     },
+    //     {
+    //       property: `og:title`,
+    //       content: title,
+    //     },
+    //     {
+    //       property: `og:description`,
+    //       content: description || metaDescription,
+    //     },
+    //     {
+    //       property: `og:type`,
+    //       content: `website`,
+    //     },
+    //     {
+    //       name: `twitter:card`,
+    //       content: image ? `summary_large_image` : `summary`,
+    //     },
+    //     {
+    //       name: `twitter:creator`,
+    //       content: site.siteMetadata.author,
+    //     },
+    //     {
+    //       name: `twitter:title`,
+    //       content: title,
+    //     },
+    //     {
+    //       name: `twitter:description`,
+    //       content: description || metaDescription,
+    //     },
+    //     {
+    //       name: `twitter:image`,
+    //       content: image,
+    //     },
+    //     {
+    //       name: `og:image`,
+    //       content: image,
+    //     },
+    //     {
+    //       name: `image`,
+    //       content: image,
+    //     },
+    //   ]
+    //     .concat(
+    //       metaImage
+    //         ? [
+    //             {
+    //               property: "og:image",
+    //               content: image,
+    //             },
+    //             {
+    //               property: "og:image:width",
+    //               content: metaImage.width,
+    //             },
+    //             {
+    //               property: "og:image:height",
+    //               content: metaImage.height,
+    //             },
+    //             {
+    //               name: "twitter:card",
+    //               content: "summary_large_image",
+    //             },
+    //           ]
+    //         : [
+    //             {
+    //               name: "twitter:card",
+    //               content: "summary",
+    //             },
+    //           ]
+    //     )
+    //     .concat(meta)}
+    // />
   )
 }
 
