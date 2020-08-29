@@ -13,7 +13,6 @@ const ArticleTemplate = ({ data: { article, site } }) => {
       <SEO
         title={article.title}
         description={article.description}
-        metaImage={article.displayImage.image}
         pathname={location}
       />
       <article className="px-15 pb-2">
