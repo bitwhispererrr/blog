@@ -72,7 +72,7 @@ function SEO({ description, lang, meta, title, pathname, keywords }) {
         },
         {
           name: `twitter:card`,
-          content: image ? `summary_large_image` : `summary`,
+          content: `summary`,
         },
         {
           name: `twitter:creator`,
@@ -98,35 +98,7 @@ function SEO({ description, lang, meta, title, pathname, keywords }) {
           name: `image`,
           content: image,
         },
-      ]
-        .concat(
-          metaImage
-            ? [
-                {
-                  property: "og:image",
-                  content: image,
-                },
-                {
-                  property: "og:image:width",
-                  content: metaImage.width,
-                },
-                {
-                  property: "og:image:height",
-                  content: metaImage.height,
-                },
-                {
-                  name: "twitter:card",
-                  content: "summary_large_image",
-                },
-              ]
-            : [
-                {
-                  name: "twitter:card",
-                  content: "summary",
-                },
-              ]
-        )
-        .concat(meta)}
+      ].concat(meta)}
     />
   )
 }
