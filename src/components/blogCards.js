@@ -1,7 +1,6 @@
-import React from 'react'
+import React from "react"
 import Card from "../components/card"
 import { useStaticQuery, graphql } from "gatsby"
-
 
 const BlogCards = ({ selectedTags }) => {
   const data = useStaticQuery(graphql`
@@ -10,7 +9,9 @@ const BlogCards = ({ selectedTags }) => {
         articles: nodes {
           title
           slug
-          tags:tag { name }
+          tags: tag {
+            name
+          }
           description
           body {
             body
@@ -18,7 +19,7 @@ const BlogCards = ({ selectedTags }) => {
           displayImage {
             title
             description
-            image:fluid {
+            image: fluid {
               ...GatsbyContentfulFluid
             }
           }
@@ -26,22 +27,23 @@ const BlogCards = ({ selectedTags }) => {
           updatedAt(fromNow: true, formatString: "MMM DD YYYY")
         }
       }
-
     }
   `)
   const article_list = data.allContentfulArticle.articles
-  console.log(article_list)
   return (
     <div class="cards">
-      {article_list.map(article =>{
-        const articleTags = article.tags ? article.tags.map(a=>a.name) : []
-        const tagNames = selectedTags.map(t=>t.name)
-        const includedArticles = tagNames.filter(tag => articleTags.includes(tag))
-        return includedArticles.length || !tagNames.length ? <Card article={article} /> : null
-      }
-      )}
+      {article_list.map(article => {
+        const articleTags = article.tags ? article.tags.map(a => a.name) : []
+        const tagNames = selectedTags.map(t => t.name)
+        const includedArticles = tagNames.filter(tag =>
+          articleTags.includes(tag)
+        )
+        return includedArticles.length || !tagNames.length ? (
+          <Card article={article} />
+        ) : null
+      })}
     </div>
   )
 }
 
-export default BlogCards;
+export default BlogCards
