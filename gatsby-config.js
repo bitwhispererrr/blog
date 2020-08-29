@@ -2,16 +2,19 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-const isProduction = process.env.NODE_ENV === 'production'
-CONTENTFUL_HOST = isProduction ? 'cdn.contentful.com' : 'preview.contentful.com'
+const isProduction = process.env.NODE_ENV === "production"
+CONTENTFUL_HOST = isProduction ? "cdn.contentful.com" : "preview.contentful.com"
 
 module.exports = {
   siteMetadata: {
     title: `Elias Nasrallah | Full Stack Wev Developer`,
-    description: 'Hi, I am Elias, and this is my personal portfolio and blog where I share tutorials and tips on several web development topics including backend and frontend technologies, web app security, best practices, and much more.',
-    author: '@thebitwhisperer',
-    siteUrl: 'https://www.enasrallah.com/',
-    twitterHandle: '@thebitwhisperer'
+    description:
+      "Hi, I am Elias, and this is my personal portfolio and blog where I share tutorials and tips on several web development topics including backend and frontend technologies, web app security, best practices, and much more.",
+    author: "@thebitwhisperer",
+    siteUrl: "https://www.enasrallah.com/",
+    twitterHandle: "@thebitwhisperer",
+    keywords:
+      "software engineer, web developer, web development, fullstack, python, javascript, django, reactjs",
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -58,10 +61,10 @@ module.exports = {
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
               quality: 80,
-              backgroundColor: 'transparent',
+              backgroundColor: "transparent",
               maxWidth: 590,
               withWebp: true,
-              tracedSVG: true
+              tracedSVG: true,
             },
           },
           {
@@ -87,9 +90,9 @@ module.exports = {
               // the language "sh" which will highlight using the
               // bash highlighter.
               aliases: {
-                sh: 'bash',
-                js: 'javascript',
-                py: 'python',
+                sh: "bash",
+                js: "javascript",
+                py: "python",
               },
               // This toggles the display of line numbers globally alongside the code.
               // To use it, add the following line in gatsby-browser.js

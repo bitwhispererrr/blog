@@ -6,13 +6,22 @@ import SEO from "../components/seo"
 import Share from "../components/Share"
 import moment from "moment"
 
-const ArticleTemplate = ({ data: { article , site} }) =>{
-  return(
+const ArticleTemplate = ({ data: { article, site } }) => {
+  const location = typeof window !== "undefined" ? window.location.pathname : ""
+  return (
     <Layout wrapperClass="bg-grey">
-      <SEO title={article.title} description={article.description} ogImageUrl={article.displayImage.image.src}/>
+      <SEO
+        title={article.title}
+        description={article.description}
+        metaImage={article.displayImage.image}
+        pathname={location}
+      />
       <article className="px-15 pb-2">
         <h1 className="article-title">{article.title}</h1>
-        <small>Published on {article.createdAt} - {moment(article.createdAt).fromNow()} </small>
+        <small>
+          Published on {article.createdAt} -{" "}
+          {moment(article.createdAt).fromNow()}{" "}
+        </small>
         <Share
           socialConfig={{
             twitterHandle: site.siteMetadata.twitterHandle,
@@ -21,15 +30,15 @@ const ArticleTemplate = ({ data: { article , site} }) =>{
               title: article.title,
             },
           }}
-          tags={article.tags.map(tag=>tag.name)}
+          tags={article.tags.map(tag => tag.name)}
         />
         <div className="image-wrapper">
           <Image fluid={article.displayImage.image} />
         </div>
         <div
-          style={{marginBottom:"2rem"}}
+          style={{ marginBottom: "2rem" }}
           dangerouslySetInnerHTML={{
-            __html: article.body.childMarkdownRemark.html
+            __html: article.body.childMarkdownRemark.html,
           }}
         />
       </article>
@@ -38,34 +47,35 @@ const ArticleTemplate = ({ data: { article , site} }) =>{
 }
 
 export const query = graphql`
-query getSingleArticle($slug:String) {
-  article: contentfulArticle(slug: {eq:$slug}) {
+  query getSingleArticle($slug: String) {
+    article: contentfulArticle(slug: { eq: $slug }) {
       title
       slug
-      tags: tag { name }
+      tags: tag {
+        name
+      }
       createdAt(fromNow: true, formatString: "MMM DD YYYY")
-      daysAgo:createdAt(fromNow: true)
-      body{ 
+      daysAgo: createdAt(fromNow: true)
+      body {
         childMarkdownRemark {
           html
         }
       }
       displayImage {
-        image:fluid {
-            ...GatsbyContentfulFluid
+        image: fluid {
+          ...GatsbyContentfulFluid
         }
       }
     }
-  site {
-    siteMetadata {
-      title
-      description
-      author
-      url: siteUrl
-      twitterHandle
+    site {
+      siteMetadata {
+        title
+        description
+        author
+        url: siteUrl
+        twitterHandle
+      }
     }
   }
-}
-
 `
 export default ArticleTemplate
