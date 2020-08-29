@@ -9,9 +9,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import Navbar from "./navbar"
 
-// import "../assets/scss/layout.scss"
-// import "../assets/scss/colors.scss"
-// import "../assets/scss/animations.scss"
+import "../assets/scss/layout.scss"
+import "../assets/scss/colors.scss"
+import "../assets/scss/animations.scss"
 
 const Layout = ({ children, wrapperClass = "" }) => {
   return (
