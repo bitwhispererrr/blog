@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import logo from "../../src/images/logo-img.png"
 
 function SEO({ description, lang, meta, title, pathname, keywords }) {
-  const { site } = useStaticQuery(
+  const { site, ogImage } = useStaticQuery(
     graphql`
       query {
         site {
@@ -24,21 +24,29 @@ function SEO({ description, lang, meta, title, pathname, keywords }) {
             siteUrl
           }
         }
+        ogImage: allFile(filter: { name: { eq: "banner" } }) {
+          bannerImage: nodes {
+            publicURL
+          }
+        }
       }
     `
   )
 
-  const metaDescription = site.siteMetadata.description
-  const image = logo
+  const pageDescription = description
+    ? description
+    : site.siteMetadata.description
+  const banner = ogImage.bannerImage[0].publicURL
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
+  const pageTitle = title
+    ? `${title} | ${site.siteMetadata.title}`
+    : site.siteMetadata.title
   return (
     <Helmet
       defer={false}
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`%s` || site.siteMetadata.title}
       link={
         canonical
           ? [
@@ -52,19 +60,19 @@ function SEO({ description, lang, meta, title, pathname, keywords }) {
       meta={[
         {
           name: `keywords`,
-          content: keywords || site.siteMetadata.keywords,
+          content: keywords ? keywords : site.siteMetadata.keywords,
         },
         {
           name: `description`,
-          content: description || metaDescription,
+          content: pageDescription,
         },
         {
           property: `og:title`,
-          content: title,
+          content: pageTitle,
         },
         {
           property: `og:description`,
-          content: description || metaDescription,
+          content: pageDescription,
         },
         {
           property: `og:type`,
@@ -72,7 +80,7 @@ function SEO({ description, lang, meta, title, pathname, keywords }) {
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
         },
         {
           name: `twitter:creator`,
@@ -80,23 +88,23 @@ function SEO({ description, lang, meta, title, pathname, keywords }) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: pageTitle,
         },
         {
           name: `twitter:description`,
-          content: description || metaDescription,
+          content: pageDescription,
         },
         {
           name: `twitter:image`,
-          content: image,
+          content: banner,
         },
         {
           name: `og:image`,
-          content: image,
+          content: banner,
         },
         {
           name: `image`,
-          content: image,
+          content: banner,
         },
       ].concat(meta)}
     />
