@@ -11,7 +11,7 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import logo from "../../src/images/logo-img.png"
 
-function SEO({ description, lang, meta, title, pathname, keywords }) {
+function SEO({ description, lang, meta, title, image, pathname, keywords }) {
   const { site, ogImage } = useStaticQuery(
     graphql`
       query {
@@ -36,7 +36,7 @@ function SEO({ description, lang, meta, title, pathname, keywords }) {
   const pageDescription = description
     ? description
     : site.siteMetadata.description
-  const banner = ogImage.bannerImage[0].publicURL
+  const banner = `${site.siteMetadata.siteUrl}/${ogImage.bannerImage[0].publicURL}`
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
   const pageTitle = title
     ? `${title} | ${site.siteMetadata.title}`
@@ -96,15 +96,15 @@ function SEO({ description, lang, meta, title, pathname, keywords }) {
         },
         {
           name: `twitter:image`,
-          content: banner,
+          content: image ? image : banner,
         },
         {
           name: `og:image`,
-          content: banner,
+          content: image ? image : banner,
         },
         {
           name: `image`,
-          content: banner,
+          content: image ? image : banner,
         },
       ].concat(meta)}
     />
