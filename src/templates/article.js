@@ -13,6 +13,7 @@ const ArticleTemplate = ({ data: { article, site } }) => {
       <SEO
         title={article.title}
         description={article.description}
+        image={article.displayImage.image.src}
         pathname={location}
       />
       <article className="px-15 pb-2">
@@ -50,6 +51,7 @@ export const query = graphql`
     article: contentfulArticle(slug: { eq: $slug }) {
       title
       slug
+      description
       tags: tag {
         name
       }

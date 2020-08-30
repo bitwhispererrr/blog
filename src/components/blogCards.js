@@ -5,14 +5,14 @@ import { useStaticQuery, graphql } from "gatsby"
 const BlogCards = ({ selectedTags }) => {
   const data = useStaticQuery(graphql`
     {
-      allContentfulArticle(limit: 4) {
+      allContentfulArticle {
         articles: nodes {
           title
           slug
+          description
           tags: tag {
             name
           }
-          description
           body {
             body
           }
